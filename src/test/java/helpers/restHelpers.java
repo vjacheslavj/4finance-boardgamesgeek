@@ -1,6 +1,5 @@
 package helpers;
 
-import io.cucumber.java.sl.In;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -38,7 +37,7 @@ public class restHelpers {
             System.out.println("Response Code: " + responseCode);
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String inputLine;
-            StringBuffer response = new StringBuffer();
+            StringBuilder response = new StringBuilder();
             while ((inputLine = in.readLine()) != null) {
                 response.append(inputLine);
             }
@@ -142,7 +141,7 @@ public class restHelpers {
         for (int i = 0; i < length; i++) {
             Node current = childNodes.item(i);
             if (current.getNodeName().equals(name))
-                nodeList.add(current);//  w  w  w. j  a va 2s .c om
+                nodeList.add(current);
         }
 
         Node[] nodes = new Node[nodeList.size()];
